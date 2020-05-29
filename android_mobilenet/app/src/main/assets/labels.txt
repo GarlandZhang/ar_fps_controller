@@ -1,0 +1,14 @@
+curl
+curl_45_out
+curl_45_palm
+curl_90_out
+curl_90_palm
+point_foreward
+point_foreward_45_out
+point_foreward_45_palm
+point_foreward_90_out
+point_foreward_90_palm
+point_up
+point_up_out
+point_up_palm
+point_up_thumb

@@ -1,0 +1,2 @@
+rootProject.name='ar_fps_run_mobilenet'
+include ':app'
