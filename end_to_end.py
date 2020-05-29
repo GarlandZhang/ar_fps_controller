@@ -32,7 +32,7 @@ assets_dir = 'C:/Users/GZhang/Desktop/side-projects/ar_fps_sim/android_mobilenet
 options = {
     'gpu': 1.0,
     'model': 'object_detection/darkflow/cfg/yolov2-tiny-voc-hand.cfg',
-    'load': 56440,
+    'load': 79440,
     'threshold': 0.1,
     'backup': 'E:/ar_fps/object_detection/ckpt',
 }
@@ -121,7 +121,7 @@ for ind, image in enumerate(frames[:NUM_IMAGES + 1]):
           id = "class_img: "
           index = log_str.index(id)
           class_name = log_str[index + len(id):]
-          # print('Class name: {}'.format(class_name))
+          print('Class name: {}'.format(class_name))
           break
         except:
           pass
