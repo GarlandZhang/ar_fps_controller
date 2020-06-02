@@ -23,8 +23,8 @@ stdout_reader = AsynchronousFileReader(process.stdout, stdout_queue)
 stdout_reader.start()
 
 # model = tf.keras.models.load_model('hand_classifier/Deep-Learning/Transfer Learning CNN/mobilenet_many_angles_new4.h5')
-gt_path = 'hand_classifier/frames/curl_annotations'
-frames_path = 'hand_classifier/frames/curl'
+frames_path = 'hand_classifier/frames/point_up'
+gt_path = frames_path + '_annotations'
 video_path = 'test_video.avi'
 assets_dir = 'C:/Users/GZhang/Desktop/side-projects/ar_fps_sim/android_mobilenet/app/src/main/assets/images'
 
@@ -67,6 +67,8 @@ for ind, image in enumerate(frames[:NUM_IMAGES + 1]):
 
   if ind == 1:
     total_time = 0
+    write_img = 0
+    detect_time = 0
 
   # print('Index: {}'.format(ind))
   
@@ -86,6 +88,7 @@ for ind, image in enumerate(frames[:NUM_IMAGES + 1]):
   img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
   results = detector.return_predict(img)
   detect_end_time = time.time()
+  print('Detect time: {}'.format(detect_end_time - detect_start_time))
   detect_time += detect_end_time - detect_start_time
 
   # write image (which will be classified by app)
@@ -106,6 +109,7 @@ for ind, image in enumerate(frames[:NUM_IMAGES + 1]):
   client.sendall(bytearray(img_bytes))
 
   end_write_img = time.time()
+  print('Write time: {}'.format(end_write_img - start_write_img))
   write_img += end_write_img - start_write_img
 
   # keep reading until log 
@@ -127,11 +131,14 @@ for ind, image in enumerate(frames[:NUM_IMAGES + 1]):
           pass
 
   end_time = time.time()
+  print('Time taken: {}'.format(end_time - start_time))
+  print('=============================================')
   total_time += end_time - start_time
 
 print('Avg detect time: {}'.format(detect_time / NUM_IMAGES))
 print('Avg write time: {}'.format(write_img / NUM_IMAGES))
 print('Avg time: {}'.format(total_time / NUM_IMAGES))
+print('Avg FPS: {}'.format(NUM_IMAGES / total_time))
 
 # stdout_reader.join()
 
