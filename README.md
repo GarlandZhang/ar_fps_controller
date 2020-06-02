@@ -7,3 +7,7 @@ Sources:
 https://github.com/victordibia/handtracking
 
 https://github.com/thtrieu/darkflow/tree/master/darkflow
+
+https://github.com/ferhat00/Deep-Learning/tree/master/Transfer%20Learning%20CNN
+
+https://www.stefaanlippens.net/python-asynchronous-subprocess-pipe-reading/
