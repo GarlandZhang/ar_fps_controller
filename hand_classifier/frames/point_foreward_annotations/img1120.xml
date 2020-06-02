@@ -1,0 +1,1 @@
+<annotation><filename>img1120.jpg</filename><size><width>640</width><height>480</height><depth>3</depth></size><object><name>hand</name><bndbox><xmin>258</xmin><ymin>208</ymin><xmax>333</xmax><ymax>283</ymax></bndbox></object><class_name>point_foreward</class_name></annotation>

@@ -91,12 +91,12 @@ public class MainActivity extends AppCompatActivity {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                GpuDelegate delegate = new GpuDelegate();
+//                GpuDelegate delegate = new GpuDelegate();
 
                 int i = 0;
                 try {
                     MappedByteBuffer tfliteModel = FileUtil.loadMappedFile(context, "model.tflite");
-                    Interpreter.Options tfliteOptions = (new Interpreter.Options()).addDelegate(delegate);
+                    Interpreter.Options tfliteOptions = (new Interpreter.Options());//.addDelegate(delegate);
 
                     for (int t = 0; t < 1; t += 1) {
                         System.out.println("Thread num: " + t);
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 // Clean up
-                delegate.close();
+                //delegate.close();
             }
         });
 

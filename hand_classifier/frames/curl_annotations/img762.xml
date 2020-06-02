@@ -1,0 +1,1 @@
+<annotation><filename>img762.jpg</filename><size><width>640</width><height>480</height><depth>3</depth></size><object><class_name>curl</class_name><name>hand</name><bndbox><xmin>234</xmin><ymin>216</ymin><xmax>309</xmax><ymax>291</ymax></bndbox></object></annotation>
